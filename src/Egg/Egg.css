@@ -1,0 +1,93 @@
+.Egg {
+    height: 40vmin;
+}
+
+.Egg-boygirl {
+    height: 40vmin;
+}
+
+.Egg-left {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 12em;
+    height: 10em;
+    margin-top: -5em;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: -6em;
+    /*set to a negative number 1/2 of your width*/
+    animation: slideToLeft 2s;
+    animation-fill-mode: forwards;
+}
+
+.Egg-right {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 12em;
+    height: 10em;
+    margin-top: -5em;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: -6em;
+    /*set to a negative number 1/2 of your width*/
+    animation: slideToRight 2s;
+    animation-fill-mode: forwards;
+}
+
+.Container {
+    outline: none;
+}
+
+.Page-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    outline: none;
+}
+
+.boy-text {
+    color: lightskyblue;
+}
+
+.girl-text {
+    color: lightpink;
+}
+
+.Progress-container {
+    width: 40vmin;
+}
+
+.progress-bar {
+    color: black;
+}
+
+@keyframes slideToLeft {
+    0% {
+        visibility: visible;
+        transform: translate(0px) rotate(0deg);
+    }
+    100% {
+        visibility: hidden;
+        transform: translate(-150px) rotate(-90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes slideToRight {
+    0% {
+        visibility: visible;
+        transform: translate(0px) rotate(0deg);
+    }
+    100% {
+        visibility: hidden;
+        transform: translate(150px) rotate(90deg);
+        opacity: 0;
+    }
+}

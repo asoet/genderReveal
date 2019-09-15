@@ -60,12 +60,8 @@
     color: lightpink;
 }
 
-.Progress-container {
-    width: 40vmin;
-}
-
-.progress-bar {
-    color: black;
+.ImageNotShow {
+    display: none;
 }
 
 @keyframes slideToLeft {

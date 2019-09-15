@@ -14,13 +14,16 @@ import Left_Half from './Images/Left Half.png';
 import Right_Half from './Images/Right Half.png';
 import Boy from './Images/boy.png';
 import Girl from './Images/girl.png';
+
 import SubTitle from './SubTitle';
+import PreLoadImages from './PreLoadImages';
 
 
 const Egg: React.FC = () => {
   const [src, setSrc] = useState(Full_Egg);
   const [count, setCount] = useState(0);
-  const isBoy = false;
+  const isBoy = true;
+  const images = [Full_Egg, crack_1, crack_2,crack_3,crack_4,crack_5,crack_6,crack_7, Left_Half, Right_Half, Boy, Girl];
 
   const click = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -43,7 +46,6 @@ const Egg: React.FC = () => {
         break;
     }
     setCount(count + 1);
-
   }
 
 
@@ -66,6 +68,7 @@ const Egg: React.FC = () => {
         <img src={Right_Half} className="Egg-right" alt="Egg" />
         </>}
       <SubTitle count={count} max={max} isBoy={isBoy} />
+      <PreLoadImages images={images} />
     </div>
   );
 }

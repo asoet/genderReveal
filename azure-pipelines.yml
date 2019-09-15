@@ -22,7 +22,7 @@ steps:
 
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: 'build'
+    SourcePath: 'build/out'
     azureSubscription: 'Betalen per gebruik(b599c9cf-e6c0-4592-b7ce-e2e167dc6d27)'
     Destination: 'AzureBlob'
     storage: 'boygirl'

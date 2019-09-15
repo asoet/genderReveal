@@ -22,7 +22,14 @@ import PreLoadImages from './PreLoadImages';
 const Egg: React.FC = () => {
   const [src, setSrc] = useState(Full_Egg);
   const [count, setCount] = useState(0);
-  const isBoy = true;
+
+  let isBoy = true;
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('srf');
+  if(myParam && myParam === "preach"){
+    isBoy = false;
+  }
+  
   const images = [Full_Egg, crack_1, crack_2,crack_3,crack_4,crack_5,crack_6,crack_7, Left_Half, Right_Half, Boy, Girl];
 
   const click = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {

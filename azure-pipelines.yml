@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'vs2017-win2016'
 
 steps:
 - task: NodeTool@0
@@ -22,7 +22,7 @@ steps:
 
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: 'build/out'
+    SourcePath: 'build'
     azureSubscription: 'Betalen per gebruik(b599c9cf-e6c0-4592-b7ce-e2e167dc6d27)'
     Destination: 'AzureBlob'
     storage: 'boygirl'

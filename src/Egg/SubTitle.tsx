@@ -26,6 +26,7 @@ const text = [
   "Lady?",
   "Finn?",
   "Mowgli?",
+  "Elmo?",
 ];
 
 const SubTitle: React.FC<SubTitleProps> = ({ count, max, isBoy, isDog }) => {

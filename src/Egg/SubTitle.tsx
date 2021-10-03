@@ -1,22 +1,59 @@
-import React from 'react';
+import React from "react";
 
-import './Egg.css';
+import "./Egg.css";
 
 type SubTitleProps = {
-    count: number;
-    max: number
-    isBoy: boolean
-}
+  count: number;
+  max: number;
+  isBoy: boolean;
+  isDog: boolean;
+};
 
-const SubTitle: React.FC<SubTitleProps> = ({count, max, isBoy}) => {
+const text = [
+  "Wat wordt haar naam?",
+  "Luna?",
+  "Bella?",
+  "Nala?",
+  "Lola?",
+  "Bo?",
+  "Coco?",
+  "Lizzy?",
+  "Molly?",
+  "Saar?",
+  "Balou?",
+  "Daisy?",
+  "Belle?",
+  "Lady?",
+  "Finn?",
+  "Mowgli?",
+];
 
-  return (<>
-    {(count % 2 !== 0) && count < max && <p className="boy-text">Is het een jongen?</p> }
-    {(count % 2 === 0) && count < max && <p className="girl-text">Is het een meisje?</p> }
-    {count >= max && isBoy && <p className="boy-text">Een Jongen</p>}
-    {count >= max && !isBoy && <p className="girl-text">Een meisje</p>}
+const SubTitle: React.FC<SubTitleProps> = ({ count, max, isBoy, isDog }) => {
+  const getText = () => {
+    if (!count) {
+      return text[0];
+    }
+    const value = text[count];
+    return value ? value : text[0];
+  };
+
+  return (
+    <>
+      {count < max && <p className="girl-text">{getText()}</p>}
+      {count >= max && (
+        <>
+          {isDog ? (
+            <p className="girl-text">Pippa!</p>
+          ) : (
+            <>
+              {isBoy && <p className="boy-text">Een Jongen</p>}
+              {!isBoy && <p className="girl-text">Een meisje</p>}
+            </>
+          )}
+        </>
+      )}
     </>
   );
-}
+};
 
 export default SubTitle;

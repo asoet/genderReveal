@@ -102,7 +102,7 @@ const Egg: React.FC = () => {
           <img src={Right_Half} className="Egg-right" alt="Egg" />
         </>
       )}
-      <SubTitle count={count} max={max} isBoy={isBoy} isDog={isDog} />
+      <SubTitle count={count} max={max} isBoy={isBoy} />
       <PreLoadImages images={images} />
     </div>
   );
